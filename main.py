@@ -71,8 +71,8 @@ def parse_page(next_url):
         i += 1
 
 
-
-parse_page(url)
+if __name__ == '__main__':
+    parse_page(url)
 
 
 
