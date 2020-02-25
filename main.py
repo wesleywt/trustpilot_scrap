@@ -35,13 +35,13 @@ def get_reviews(bs):
         company = review_info_json['businessUnitDisplayName']
         stars = review_info_json['stars']
         # Added this in case no title is provided.
-        if review_card[i].find('a', {'class': 'link link--large link--dark'}).text == None:
+        if review_card[i].find('a', {'class': 'link link--large link--dark'}).text is None:
             review_title = 'No title provided'
         else:
             review_title = review_card[i].find('a', {'class': 'link link--large link--dark'}).text
 
         # Some reviews have comments left out leading to the NoneType Error. Replaced it with if check
-        if review_card[i].find('p', {'class': 'review-content__text'}) == None:
+        if review_card[i].find('p', {'class': 'review-content__text'}) is None:
             review_comment = 'No comment provided'
         else:
             review_comment = review_card[i].find('p', {'class': 'review-content__text'}).text.strip()
